@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/background_waves_darkened"
+        android:scaleType="fitCenter"
+        android:cropToPadding="true"
+        android:padding="1dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:layout_alignParentTop="true"
+        android:id="@+id/topPanel"
+        android:orientation="vertical"
+        android:layout_alignTop="@id/topPanel">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/colorAppAqua"
+            android:textAllCaps="false"
+            android:textSize="25dp"
+            android:shadowColor="@color/colorBlack"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:text="About your image"
+            android:textAlignment="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginVertical="1dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="Resolution: "
+                    android:fontFamily="sans-serif-condensed"
+                    android:textColor="@color/colorAppAqua"                    android:textAllCaps="false"
+                    android:textSize="20dp"
+                    android:shadowColor="@color/colorBlack"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="3" />
+
+                <TextView
+                    android:id="@+id/imageResolution"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginVertical="1dp"
+                    android:text="0x0"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textColor="@color/colorAppAqua"                    android:textAllCaps="false"
+                    android:textSize="20dp"
+                    android:shadowColor="@color/colorBlack"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="3" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginVertical="1dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="Byte count: "
+                    android:fontFamily="sans-serif-condensed"
+                    android:textColor="@color/colorAppAqua"                    android:textAllCaps="false"
+                    android:textSize="20dp"
+                    android:shadowColor="@color/colorBlack"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="3" />
+
+                <TextView
+                    android:id="@+id/imageFileSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginVertical="1dp"
+                    android:text="0mb"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textColor="@color/colorAppAqua"                    android:textAllCaps="false"
+                    android:textSize="20dp"
+                    android:shadowColor="@color/colorBlack"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="3"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topPanel"
+        android:layout_marginTop="10dp"
+        android:id="@+id/middlePanel">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:id="@+id/imagePreview"
+            android:background="#000000"
+            android:scaleType="centerCrop"
+            android:cropToPadding="true"
+            android:padding="1dp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:layout_centerInParent="false"
+        android:id="@+id/bottomPanel"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/btnAdjustImage"
+            android:onClick="onClickAdjustImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAppAqua"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/colorWhite"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:shadowColor="@color/colorBlack"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:text="Adjust your image"/>
+
+        <Button
+            android:id="@+id/btnDetectFace"
+            android:onClick="onClickDetectFace"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/btnAdjustImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAppAqua"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/colorWhite"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:shadowColor="@color/colorBlack"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:text="Facial recognition"/>
+
+        <Button
+            android:id="@+id/btnSaveImageToDevice"
+            android:onClick="onClickSaveToDevice"
+            android:layout_below="@+id/btnDetectFace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorAppAqua"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/colorWhite"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:shadowColor="@color/colorBlack"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:text="Save image to device"/>
+
+        <Button
+            android:id="@+id/btnNewImage"
+            android:onClick="onClickNewImage"
+            android:layout_below="@+id/btnSaveImageToDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorAppAqua"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/colorWhite"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:shadowColor="@color/colorBlack"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:text="Choose new image"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

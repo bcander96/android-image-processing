@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_rgb"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/background_waves_darkened"
+        android:scaleType="fitCenter"
+        android:cropToPadding="true"
+        android:padding="1dp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/topPanel"
+        android:layout_alignTop="@id/topPanel"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/colorAppAqua"
+            android:textAllCaps="false"
+            android:textSize="25dp"
+            android:shadowColor="@color/colorBlack"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:text="Adjust RGB values"
+            android:textAlignment="center" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topPanel"
+        android:id="@+id/middlePanel">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:id="@+id/imagePreview"
+            android:background="#000000"
+            android:scaleType="centerCrop"
+            android:cropToPadding="true"
+            android:padding="1dp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/bottomPanel"
+        android:layout_below="@id/middlePanel">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/RedButtons"
+            android:layout_marginTop="5dp"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnDecreaseRed"
+                android:onClick="onClickDecreaseRed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginVertical="5dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="10dp"
+                android:background="@color/colorAppAqua"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/colorWhite"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:shadowColor="@color/colorBlack"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="3"
+                android:text="Red -"/>
+
+            <Button
+                android:id="@+id/btnIncreaseRed"
+                android:onClick="onClickIncreaseRed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginVertical="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:background="@color/colorAppAqua"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/colorWhite"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:shadowColor="@color/colorBlack"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="3"
+                android:text="Red +"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/GreenButtons"
+            android:layout_below="@id/RedButtons"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnDecreaseGreen"
+                android:onClick="onClickDecreaseGreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginVertical="5dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="10dp"
+                android:background="@color/colorAppAqua"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/colorWhite"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:shadowColor="@color/colorBlack"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="3"
+                android:text="Green -"/>
+
+            <Button
+                android:id="@+id/btnIncreaseGreen"
+                android:onClick="onClickIncreaseGreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginVertical="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:background="@color/colorAppAqua"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/colorWhite"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:shadowColor="@color/colorBlack"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="3"
+                android:text="Green +"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/BlueButtons"
+            android:layout_below="@id/GreenButtons"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnDecreaseBlue"
+                android:onClick="onClickDecreaseBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginVertical="5dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="10dp"
+                android:background="@color/colorAppAqua"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/colorWhite"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:shadowColor="@color/colorBlack"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="3"
+                android:text="Blue -"/>
+
+            <Button
+                android:id="@+id/btnIncreaseBlue"
+                android:onClick="onClickIncreaseBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginVertical="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:background="@color/colorAppAqua"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/colorWhite"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:shadowColor="@color/colorBlack"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="3"
+                android:text="Blue +"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnGoBack"
+            android:onClick="onClickGoBack"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:background="@color/colorAppAqua"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/colorWhite"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:shadowColor="@color/colorBlack"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:text="Go back"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

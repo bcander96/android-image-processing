@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_startup"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    >
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/background_waves"
+        android:scaleType="fitCenter"
+        android:cropToPadding="true"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/topPanel"
+        android:layout_above="@+id/middlePanel">
+
+        <ImageView
+            android:id="@+id/app_logo"
+            android:layout_width="500px"
+            android:layout_height="500px"
+            android:background="@drawable/app_logo"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:cropToPadding="true"
+            android:padding="1dp" />
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerVertical="false"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:fontFamily="sans-serif-condensed"-->
+            <!--android:textColor="@color/colorWhite"-->
+            <!--android:text="Upload or capture an image to begin"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textSize="20dp" />-->
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/middlePanel"
+        android:padding="5dp">
+
+        <Button
+            android:id="@+id/btnCaptureImage"
+            android:onClick="onClickCaptureImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+
+            android:background="@color/colorAppAqua"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/colorWhite"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:shadowColor="@color/colorBlack"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+
+            android:text="Capture an image"/>
+
+        <Button
+            android:id="@+id/btnUploadImage"
+            android:onClick="onClickUploadImage"
+            android:layout_below="@+id/btnCaptureImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@color/colorAppAqua"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/colorWhite"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:shadowColor="@color/colorBlack"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:text="Upload an image"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

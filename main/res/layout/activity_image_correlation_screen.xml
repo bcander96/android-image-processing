@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_image_correlation"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/background_waves_darkened"
+        android:scaleType="fitCenter"
+        android:cropToPadding="true"
+        android:padding="1dp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/topPanel"
+        android:layout_alignTop="@id/topPanel"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:layout_centerInParent="true"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/colorAppAqua"
+            android:textAllCaps="false"
+            android:textSize="25dp"
+            android:shadowColor="@color/colorBlack"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:textAlignment="center"
+            android:text="Facial recognition"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topPanel"
+        android:id="@+id/middlePanel">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:id="@+id/imagePreview"
+            android:background="#000000"
+            android:scaleType="centerCrop"
+            android:cropToPadding="true"
+            android:padding="1dp"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/middlePanel"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/patchInput"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/colorBlack"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:shadowColor="@color/colorBlack"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:text="Patch size (%):"/>
+
+        <EditText
+            android:id="@+id/editTextInputPatchSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+        />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/patchInput"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/rangeInput"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/colorBlack"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:shadowColor="@color/colorBlack"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:text="Range (0-15):"/>
+
+        <EditText
+            android:id="@+id/editTextInputRange"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnCorrelation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/rangeInput"
+        android:background="@color/colorAppAqua"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/colorWhite"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:shadowColor="@color/colorBlack"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3"
+        android:onClick="onClickCorrelation"
+        android:text="Begin facial recognition" />
+
+    <Button
+        android:id="@+id/btnGoBack"
+        android:onClick="onClickGoBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorAppAqua"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/colorWhite"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:shadowColor="@color/colorBlack"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3"
+        android:text="Go back"/>
+
+</RelativeLayout>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_correlation_results"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/background_waves_darkened"
+        android:scaleType="fitCenter"
+        android:cropToPadding="true"
+        android:padding="1dp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/topPanel"
+        android:layout_alignTop="@id/topPanel">
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:layout_centerInParent="true"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/colorAppAqua"
+            android:textAllCaps="false"
+            android:textSize="25dp"
+            android:shadowColor="@color/colorBlack"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:textAlignment="center"
+            android:text="Recognition results"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topPanel"
+        android:id="@+id/middlePanel">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:id="@+id/imagePreview"
+            android:background="#80000000"
+            android:scaleType="fitCenter"
+            android:cropToPadding="true"
+            android:padding="1dp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:id="@+id/imagePreviewRecon"
+            android:layout_below="@id/imagePreview"
+            android:background="#80000000"
+            android:scaleType="fitCenter"
+            android:cropToPadding="true"
+            android:padding="1dp" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txtMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/middlePanel"
+
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:layout_centerInParent="true"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/colorAppAqua"
+        android:textAllCaps="false"
+        android:textSize="15dp"
+        android:shadowColor="@color/colorBlack"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3"
+        android:text="The above image is a reconstruction of the results gathered from the correlation algorithm. Below is the name and score of the closest match found for your image."/>
+
+    <TextView
+        android:id="@+id/txtResultName"
+        android:layout_below="@id/txtMessage"
+        android:layout_marginHorizontal="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/colorBlack"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:shadowColor="@color/colorBlack"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3"
+        android:text="Best match: "
+        />
+
+    <TextView
+        android:id="@+id/txtResultScore"
+        android:layout_below="@id/txtResultName"
+        android:layout_marginHorizontal="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/colorBlack"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:shadowColor="@color/colorBlack"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3"
+        android:text="Score: "
+        />
+
+    <Button
+        android:id="@+id/btnGoBack"
+        android:onClick="onClickGoBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorAppAqua"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/colorWhite"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:shadowColor="@color/colorBlack"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3"
+        android:text="Go back"/>
+
+</RelativeLayout>

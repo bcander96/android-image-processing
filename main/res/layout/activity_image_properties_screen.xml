@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_image_properties"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/background_waves_darkened"
+        android:scaleType="fitCenter"
+        android:cropToPadding="true"
+        android:padding="1dp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/topPanel"
+        android:layout_alignTop="@id/topPanel"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:layout_centerInParent="true"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/colorAppAqua"
+            android:textAllCaps="false"
+            android:textSize="25dp"
+            android:shadowColor="@color/colorBlack"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:text="Image properties"
+            android:textAlignment="center" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topPanel"
+        android:id="@+id/middlePanel">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:id="@+id/imagePreview"
+            android:background="#000000"
+            android:scaleType="centerCrop"
+            android:cropToPadding="true"
+            android:padding="1dp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:layout_centerInParent="false"
+        android:id="@+id/bottomPanel"
+        android:layout_below="@id/middlePanel">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/brightnessButtons"
+            android:layout_marginTop="10dp"
+            android:layout_marginVertical="5dp"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnDecreaseBrightness"
+                android:onClick="onClickDecreaseBrightness"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="10dp"
+                android:background="@color/colorAppAqua"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/colorWhite"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:shadowColor="@color/colorBlack"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="3"
+
+                android:text="Brightness -"/>
+
+            <Button
+                android:id="@+id/btnIncreaseBrightness"
+                android:onClick="onClickIncreaseBrightness"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:background="@color/colorAppAqua"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/colorWhite"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:shadowColor="@color/colorBlack"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="3"
+                android:text="Brightness +"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/contrastButtons"
+            android:layout_marginVertical="5dp"
+            android:layout_below="@id/brightnessButtons"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnDecreaseContrast"
+                android:onClick="onClickDecreaseContrast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="10dp"
+                android:background="@color/colorAppAqua"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/colorWhite"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:shadowColor="@color/colorBlack"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="3"
+                android:text="Contrast -"/>
+
+            <Button
+                android:id="@+id/btnIncreaseContrast"
+                android:onClick="onClickIncreaseContrast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:background="@color/colorAppAqua"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/colorWhite"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:shadowColor="@color/colorBlack"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="3"
+                android:text="Contrast +"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/exposureButtons"
+            android:layout_marginVertical="5dp"
+            android:layout_below="@id/contrastButtons"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnDecreaseExposure"
+                android:onClick="onClickDecreaseExposure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="10dp"
+                android:background="@color/colorAppAqua"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/colorWhite"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:shadowColor="@color/colorBlack"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="3"
+                android:text="Exposure -"/>
+
+            <Button
+                android:id="@+id/btnIncreaseExposure"
+                android:onClick="onClickIncreaseExposure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:background="@color/colorAppAqua"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/colorWhite"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:shadowColor="@color/colorBlack"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="3"
+                android:text="Exposure +"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/saturationButtons"
+            android:layout_marginVertical="5dp"
+            android:layout_below="@id/exposureButtons"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnDecreaseSaturation"
+                android:onClick="onClickDecreaseSaturation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="10dp"
+                android:background="@color/colorAppAqua"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/colorWhite"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:shadowColor="@color/colorBlack"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="3"
+                android:text="Saturation -"/>
+
+            <Button
+                android:id="@+id/btnIncreaseSaturation"
+                android:onClick="onClickIncreaseSaturation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:background="@color/colorAppAqua"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/colorWhite"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:shadowColor="@color/colorBlack"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="3"
+                android:text="Saturation +"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnGoBack"
+            android:onClick="onClickGoBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginVertical="5dp"
+            android:background="@color/colorAppAqua"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/colorWhite"
+            android:textAllCaps="false"
+            android:textSize="18dp"
+            android:shadowColor="@color/colorBlack"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:text="Go back"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
